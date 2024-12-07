@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article Purchase System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Purchase Article</h1>
+        <form id="purchaseForm" method="POST" action="process_payment.php">
+            <label for="articleTitle">Article Title:</label>
+            <input type="text" id="articleTitle" name="articleTitle" required>
+
+            <label for="cardNumber">Card Number:</label>
+            <input type="text" id="cardNumber" name="cardNumber" required>
+
+            <label for="expiryDate">Expiry Date:</label>
+            <input type="text" id="expiryDate" name="expiryDate" required placeholder="MM/YY">
+
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" required>
+
+            <button type="submit">Purchase</button>
+        </form>
+        <div id="errorMessage" class="error"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

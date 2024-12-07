@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article Archive</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Article Archive</h1>
+    </header>
+    <main>
+        <input type="text" id="search" placeholder="Search articles..." onkeyup="searchArticles()">
+        <ul id="article-list">
+            <li data-topic="entrepreneurship">Understanding Entrepreneurship in Africa</li>
+            <li data-topic="management">Management Strategies for African Businesses</li>
+            <li data-topic="business">The Future of Business in Africa</li>
+        </ul>
+    </main>
+    <script>
+        function searchArticles() {
+            const input = document.getElementById('search').value.toLowerCase();
+            const articles = document.getElementById('article-list').getElementsByTagName('li');
+            for (let i = 0; i < articles.length; i++) {
+                const article = articles[i];
+                article.style.display = article.textContent.toLowerCase().includes(input) ? '' : 'none';
+            }
+        }
+    </script>
+</body>
+</html>
